@@ -15,6 +15,7 @@
         <entry key="app/src/main/res/layout/fragment_disparch.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_new_order.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_orders.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/login_fragment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/login_tab_fragment.xml" value="0.19322916666666667" />
