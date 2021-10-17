@@ -12,7 +12,7 @@ import com.silikhe.healthcare.R;
 public class RegisterTabFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance){
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.login_tab_fragment, container, false);
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.login_fragment, container, false);
         return root;
     }
 }

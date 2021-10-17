@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.10520833333333333" />
         <entry key="app/src/main/res/drawable/bg_btn.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.10520833333333333" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.10520833333333333" />
         <entry key="app/src/main/res/drawable/vie_bg.xml" value="0.209375" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19322916666666667" />
@@ -12,7 +14,9 @@
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_disparch.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_new_order.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_orders.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/login_fragment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/login_tab_fragment.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/register_tab_fragment.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />

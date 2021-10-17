@@ -11,7 +11,7 @@ import com.silikhe.healthcare.R;
 
 public class LoginTabFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance){
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.register_tab_fragment, container, false);
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.register_fragment, container, false);
         return root;
     }
 }
