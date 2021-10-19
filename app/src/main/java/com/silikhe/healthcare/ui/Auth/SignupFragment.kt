@@ -12,6 +12,7 @@ import com.silikhe.healthcare.R
 import com.silikhe.healthcare.databinding.RegisterFragmentBinding
 import com.silikhe.healthcare.ui.Base.BaseFragment
 import androidx.lifecycle.Observer
+import com.silikhe.healthcare.Data.Network.AuthApi
 
 class SignupFragment :  BaseFragment<AuthViewModel, RegisterFragmentBinding, AuthRepos>() {
 
@@ -59,20 +60,27 @@ class SignupFragment :  BaseFragment<AuthViewModel, RegisterFragmentBinding, Aut
         }
     }
 
-    override fun getViewModel(): Class<AuthViewModel> {
-        TODO("Not yet implemented")
-    }
+//    override fun getViewModel(): Class<AuthViewModel> {
+//        TODO("Not yet implemented")
+//    }
+
+    override fun getViewModel() = AuthViewModel::class.java
+
+
+//    override fun getFragmentBinding(
+//        inflater: LayoutInflater,
+//        container: ViewGroup?
+//    ): RegisterFragmentBinding {
+//        TODO("Not yet implemented")
+//    }
 
     override fun getFragmentBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
-    ): RegisterFragmentBinding {
-        TODO("Not yet implemented")
-    }
+    ): RegisterFragmentBinding = RegisterFragmentBinding.inflate(inflater, container, false)
 
-    override fun getFragmentRepository(): AuthRepos {
-        TODO("Not yet implemented")
-    }
+    override fun getFragmentRepository() = AuthRepos(remoteDataSource.buidApi(AuthApi::class.java))
+
 
 
 }
