@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/imgSign"
-        android:layout_width="250dp"
-        android:layout_height="300dp"
+        android:layout_width="309dp"
+        android:layout_height="226dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:src="@drawable/logo"
@@ -75,6 +75,28 @@
         app:layout_constraintStart_toStartOf="@+id/et_pass"
         app:layout_constraintTop_toBottomOf="@+id/et_pass" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/weightTextField"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Type"
+        app:endIconDrawable="@drawable/ic_drop_down_24"
+        app:endIconMode="custom"
+        app:layout_constraintEnd_toEndOf="@+id/et_password"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="@+id/et_password"
+        app:layout_constraintTop_toBottomOf="@+id/et_password">
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:paddingStart="16dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_sign"
         android:layout_width="0dp"
@@ -86,7 +108,7 @@
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="@+id/et_password"
         app:layout_constraintStart_toStartOf="@+id/et_password"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+        app:layout_constraintTop_toBottomOf="@+id/weightTextField" />
 
     <TextView
         android:id="@+id/swipeRight"
