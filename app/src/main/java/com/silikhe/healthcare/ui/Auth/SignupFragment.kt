@@ -60,19 +60,12 @@ class SignupFragment :  BaseFragment<AuthViewModel, RegisterFragmentBinding, Aut
         }
     }
 
-//    override fun getViewModel(): Class<AuthViewModel> {
-//        TODO("Not yet implemented")
-//    }
+
 
     override fun getViewModel() = AuthViewModel::class.java
 
 
-//    override fun getFragmentBinding(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?
-//    ): RegisterFragmentBinding {
-//        TODO("Not yet implemented")
-//    }
+
 
     override fun getFragmentBinding(
         inflater: LayoutInflater,

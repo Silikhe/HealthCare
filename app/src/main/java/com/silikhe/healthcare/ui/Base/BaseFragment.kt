@@ -10,18 +10,24 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.silikhe.healthcare.Data.Network.DataSourceControl
 import com.silikhe.healthcare.Data.Repository.BaseRepos
+import com.silikhe.healthcare.Data.UserPreferences
 
 abstract class BaseFragment<VM: ViewModel, B:ViewBinding, R: BaseRepos> : Fragment() {
+   protected lateinit var userPreferences: UserPreferences
     protected lateinit var binding: B
     protected lateinit var viewModel: VM
 
     protected val remoteDataSource = DataSourceControl()
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        userPreferences = UserPreferences(requireContext())
 //        return super.onCreateView(inflater, container, savedInstanceState)
         binding = getFragmentBinding(inflater, container)
         val factory = ViewModelFactory(getFragmentRepository())

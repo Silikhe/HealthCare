@@ -3,32 +3,27 @@ package com.silikhe.healthcare
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.asLiveData
+import com.silikhe.healthcare.Data.UserPreferences
 import com.silikhe.healthcare.ui.Auth.AuthActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private val SPLASH_TIME_OUT: Long = 3000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        Handler().postDelayed({
-//            // This method will be executed once the timer is over
-//            // Start your app main activity
-//            val intent = Intent(this, AuthActivity::class.java)
-//            overridePendingTransition(0, 0);
-//            finish();
-//            startActivity(intent);
-////            startActivity(Intent(this, SignupFragment::class.java))
-//
-//            // close this activity
-////            finish()
-//        }, SPLASH_TIME_OUT)
 
         finish()
-        startActivity(Intent(this, AuthActivity::class.java))
 
+        val userPreferences = UserPreferences(this)
+        userPreferences.authToken.asLiveData().observe(this, Observer {
+            Toast.makeText(this, it ?: "Token is null", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, AuthActivity::class.java))
+        })
     }
 
 }

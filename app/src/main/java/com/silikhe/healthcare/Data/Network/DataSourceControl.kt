@@ -8,15 +8,23 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class DataSourceControl {
     companion object{
-        private const val BASE_URL = "https ://fw-supplies.herokuapp.com/api/v1/"
+        private const val BASE_URL = "https://fw-supplies.herokuapp.com/api/v1/"
     }
 
     fun <Api> buidApi(
-        api: Class<Api>
+        api: Class<Api>,
+        authToken: String? = null
     ): Api{
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .client(OkHttpClient.Builder().also { client ->
+            .client(OkHttpClient.Builder()
+                .addInterceptor { 
+                    chain ->
+                    chain.proceed(chain.request().newBuilder().also {
+                        it.addHeader("Authorization", "Bearer $authToken")
+                    }.build())
+                }
+                .also { client ->
                 if (BuildConfig.DEBUG){
                     val logging = HttpLoggingInterceptor()
                     logging.setLevel(HttpLoggingInterceptor.Level.BODY)

@@ -12,8 +12,8 @@ interface AuthApi {
     //endpoint to hit
     @POST("auth/login/")
     suspend fun login(
-        @Field("Email") email: String,
-        @Field("Password") password: String,
+        @Field("email") email: String,
+        @Field("password") password: String,
 
         ): LoginResponse
 
@@ -22,9 +22,9 @@ interface AuthApi {
     //endpoint to hit
     @POST("auth/register/")
     suspend fun signup(
-        @Field("Username") username: String,
-        @Field("Email") email: String,
-        @Field("Password") password: String,
+        @Field("username") username: String,
+        @Field("email") email: String,
+        @Field("password") password: String,
         @Field("type") type: String,
         ): SignupResponse
 }
