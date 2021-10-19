@@ -20,10 +20,10 @@ class MainActivity : AppCompatActivity() {
         finish()
 
         val userPreferences = UserPreferences(this)
-        userPreferences.authToken.asLiveData().observe(this, Observer {
-            Toast.makeText(this, it ?: "Token is null", Toast.LENGTH_SHORT).show()
+//        userPreferences.authToken.asLiveData().observe(this, Observer {
+//            Toast.makeText(this, it ?: "Token is null", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, AuthActivity::class.java))
-        })
+//        })
     }
 
 }

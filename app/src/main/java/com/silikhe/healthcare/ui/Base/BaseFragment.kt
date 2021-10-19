@@ -12,13 +12,13 @@ import com.silikhe.healthcare.Data.Network.DataSourceControl
 import com.silikhe.healthcare.Data.Repository.BaseRepos
 import com.silikhe.healthcare.Data.UserPreferences
 
-abstract class BaseFragment<VM: ViewModel, B:ViewBinding, R: BaseRepos> : Fragment() {
-   protected lateinit var userPreferences: UserPreferences
+abstract class BaseFragment<VM : ViewModel, B : ViewBinding, R : BaseRepos> : Fragment() {
+    protected lateinit var userPreferences: UserPreferences
+
     protected lateinit var binding: B
     protected lateinit var viewModel: VM
 
     protected val remoteDataSource = DataSourceControl()
-
 
 
     override fun onCreateView(
@@ -26,9 +26,10 @@ abstract class BaseFragment<VM: ViewModel, B:ViewBinding, R: BaseRepos> : Fragme
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+       //Intialize userprefernces
 
         userPreferences = UserPreferences(requireContext())
-//        return super.onCreateView(inflater, container, savedInstanceState)
+
         binding = getFragmentBinding(inflater, container)
         val factory = ViewModelFactory(getFragmentRepository())
         viewModel = ViewModelProvider(this, factory).get(getViewModel())
@@ -36,9 +37,9 @@ abstract class BaseFragment<VM: ViewModel, B:ViewBinding, R: BaseRepos> : Fragme
         return binding.root
     }
 
-    abstract fun getViewModel() : Class<VM>
+    abstract fun getViewModel(): Class<VM>
 
-    abstract fun getFragmentBinding(inflater: LayoutInflater, container: ViewGroup?) : B
+    abstract fun getFragmentBinding(inflater: LayoutInflater, container: ViewGroup?): B
 
     abstract fun getFragmentRepository(): R
 

@@ -7,11 +7,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import com.silikhe.healthcare.Data.Network.AuthApi
 import com.silikhe.healthcare.Data.Network.Resource
 import com.silikhe.healthcare.Data.Repository.AuthRepos
+import com.silikhe.healthcare.Data.UserPreferences
 import com.silikhe.healthcare.R
 import com.silikhe.healthcare.databinding.LoginFragmentBinding
 import com.silikhe.healthcare.ui.Base.BaseFragment
@@ -27,21 +29,12 @@ class LoginFragment : BaseFragment<AuthViewModel, LoginFragmentBinding, AuthRepo
         viewModel.loginResponse.observe(viewLifecycleOwner, Observer {
             when (it) {
                 is Resource.Success -> {
-                    Toast.makeText(
-                        requireContext(),
-                        "Login successful token " + it.value.access,
-                        Toast.LENGTH_LONG
-                    ).show()
-
                     lifecycleScope.launch {
                         userPreferences.saveAuthToken(it.value.access)
                     }
-                    //save the token the start new activity
 
-                    PreferenceManager.getDefaultSharedPreferences(activity).edit().putString("Auth_token", it.value.access).apply()
-                    PreferenceManager.getDefaultSharedPreferences(activity).getString("Auth_token", it.value.access)
-//                    requireActivity().startNewActivity(HomeActivity::class.java)
-                    Intent(requireContext(), HomeActivity::class.java)
+//                    PreferenceManager.getDefaultSharedPreferences(activity).edit().putString("Auth_token", it.value.access).apply()
+//                    PreferenceManager.getDefaultSharedPreferences(activity).getString("Auth_token", it.value.access)
 
                 }
                 is Resource.Failure -> {

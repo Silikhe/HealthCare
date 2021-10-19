@@ -2,36 +2,31 @@ package com.silikhe.healthcare.Data
 
 import android.content.Context
 import androidx.datastore.core.DataStore
-import androidx.datastore.dataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.stringPreferencesKey
-import androidx.datastore.preferences.preferencesDataStore
+import androidx.datastore.preferences.core.preferencesKey
+
+import androidx.datastore.preferences.createDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "my_data_store")
+//val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "my_data_store")
 //private val Context.dataStore by preferencesDataStore("my_data_store")
+
+
 
 class UserPreferences(
     context: Context
 ) {
-//    private val dataStore = context.dataStore
     private val applicationContext = context.applicationContext
-//    private val dataStore: DataStore<Preferences>
 
-    private val dataStore: DataStore<Preferences> = context.createDataStore(
-        name = "my_data_store"
-    )
+    private val dataStore: DataStore<Preferences>
 
-//    init {
-//        dataStore = applicationContext.createDataStore(
-//            name = "my_data_store"
-//        )
-//
-////        val Context.settingsDataStore: DataStore<Settings> by dataStore(
-////            fileName = "settings.pb",
-////        )
-//    }
+    init {
+        dataStore = applicationContext.createDataStore(
+            name = "my_data_store"
+        )
+
+    }
 
     val authToken: Flow<String?>
         get() = dataStore.data.map { preferences ->
@@ -45,7 +40,7 @@ class UserPreferences(
     }
 
     companion object {
-        private val KEY_AUTH = stringPreferencesKey("key_auth")
+        private val KEY_AUTH = preferencesKey<String>("key_auth")
     }
 }
 
