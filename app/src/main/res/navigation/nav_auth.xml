@@ -3,22 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_auth"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/splashFragment">
     <fragment
         android:id="@+id/registerFragment"
         tools:layout="@layout/register_fragment"
-        android:name="com.silikhe.healthcare.Auth.SignupFragment"
-        android:label="RegisterFragment" />
+        android:name="com.silikhe.healthcare.ui.Auth.SignupFragment"
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         tools:layout="@layout/login_fragment"
-        android:name="com.silikhe.healthcare.Auth.LoginFragment"
-        android:label="LoginFragment" />
+        android:name="com.silikhe.healthcare.ui.Auth.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment2"
+            app:destination="@id/registerFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/splashFragment"
         tools:layout="@layout/fragment_splash"
-        android:name="com.silikhe.healthcare.Auth.SplashFragment"
-        android:label="SplashFragment" />
+        android:name="com.silikhe.healthcare.ui.Auth.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment2"
+            app:destination="@id/loginFragment" />
+    </fragment>
 
 </navigation>

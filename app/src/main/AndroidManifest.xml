@@ -6,15 +6,18 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.HealthCare">
+        android:theme="@style/Theme.HealthCare"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".Auth.AuthActivity"
+            android:name=".ui.Home.HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.Auth.AuthActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
