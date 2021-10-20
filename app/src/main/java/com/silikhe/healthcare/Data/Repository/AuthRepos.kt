@@ -1,9 +1,11 @@
 package com.silikhe.healthcare.Data.Repository
 
 import com.silikhe.healthcare.Data.Network.AuthApi
+import com.silikhe.healthcare.Data.UserPreferences
 
 class AuthRepos (
-    private val api: AuthApi
+    private val api: AuthApi,
+    private val preferences: UserPreferences
 
 ) : BaseRepos(){
 
@@ -22,5 +24,9 @@ class AuthRepos (
         type: String
     ) = safeApiCall {
         api.signup(username, email, password, type)
+    }
+
+    suspend fun saveAuthToken(token: String){
+        preferences.saveAuthToken(token)
     }
 }

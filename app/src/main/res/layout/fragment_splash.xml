@@ -23,37 +23,42 @@
 
     <ImageView
         android:id="@+id/splash_image"
-        android:layout_width="300dp"
-        android:layout_height="380dp"
-        android:layout_marginStart="50dp"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="100dp"
+        android:alpha=".8"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.604"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/bg" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Manage medical Supply at ease "
-        android:textSize="18sp"
+        android:alpha=".8"
+        android:text="MEDICAL SUPPLY"
+        android:textSize="23sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.449"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splash_image"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:alpha=".8"
         android:text="Creative.Mind corp"
         android:textAlignment="center"
         android:textColor="@color/primary"
-        android:textSize="18sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

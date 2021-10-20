@@ -1,4 +1,4 @@
-package com.silikhe.healthcare.ui.Home
+package com.silikhe.healthcare.ui.Hospital
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

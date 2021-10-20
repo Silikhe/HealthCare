@@ -3,11 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_home"
-    app:startDestination="@id/homeActivity">
+    app:startDestination="@id/homeFragment">
 
-    <activity
-        android:id="@+id/homeActivity"
-        android:name="com.silikhe.healthcare.ui.Home.HomeActivity"
-        android:label="activity_home"
-        tools:layout="@layout/activity_home" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.silikhe.healthcare.ui.Hospital.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.silikhe.healthcare.ui.Hospital.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" />
 </navigation>

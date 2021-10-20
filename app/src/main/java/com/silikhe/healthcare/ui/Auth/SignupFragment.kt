@@ -22,7 +22,7 @@ class SignupFragment :  BaseFragment<AuthViewModel, RegisterFragmentBinding, Aut
         viewModel.signupResponse.observe(viewLifecycleOwner, Observer {
             when(it) {
                 is Resource.Success -> {
-                    Toast.makeText(requireContext(), "login successfull", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "login successful", Toast.LENGTH_LONG).show()
 
                     findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
                 }
@@ -72,7 +72,7 @@ class SignupFragment :  BaseFragment<AuthViewModel, RegisterFragmentBinding, Aut
         container: ViewGroup?
     ): RegisterFragmentBinding = RegisterFragmentBinding.inflate(inflater, container, false)
 
-    override fun getFragmentRepository() = AuthRepos(remoteDataSource.buidApi(AuthApi::class.java))
+    override fun getFragmentRepository() = AuthRepos(remoteDataSource.buidApi(AuthApi::class.java), userPreferences)
 
 
 

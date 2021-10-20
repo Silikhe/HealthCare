@@ -42,6 +42,7 @@ class UserPreferences(
     companion object {
         private val KEY_AUTH = preferencesKey<String>("key_auth")
     }
+
 }
 
 
