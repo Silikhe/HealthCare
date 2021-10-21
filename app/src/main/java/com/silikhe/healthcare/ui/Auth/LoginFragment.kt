@@ -30,12 +30,12 @@ class LoginFragment : BaseFragment<AuthViewModel, LoginFragmentBinding, AuthRepo
             when (it) {
                 is Resource.Success -> {
 
-//                    val sharedPref =
-//                        activity?.getSharedPreferences("shared_pref", Context.MODE_PRIVATE) ?: return@Observer
-//                    with(sharedPref.edit()) {
-//                        putString("auth_key", it.value.access)
-//                        apply()
-//                    }
+                    val sharedPref =
+                        activity?.getSharedPreferences("shared_pref", Context.MODE_PRIVATE) ?: return@Observer
+                    with(sharedPref.edit()) {
+                        putString("auth_key", it.value.access)
+                        apply()
+                    }
 
 
 
@@ -44,8 +44,8 @@ class LoginFragment : BaseFragment<AuthViewModel, LoginFragmentBinding, AuthRepo
 
                     requireActivity().startNewActivity(HomeActivity::class.java)
 
-//                    PreferenceManager.getDefaultSharedPreferences(activity).edit()
-//                        .putString("Auth_token", it.value.access).apply()
+                    PreferenceManager.getDefaultSharedPreferences(activity).edit()
+                        .putString("Auth_token", it.value.access).apply()
 //                    val mimi = PreferenceManager.getDefaultSharedPreferences(activity)
 //                        .getString("Auth_token", it.value.access)
 //                    Toast.makeText(context, "" + mimi, Toast.LENGTH_SHORT).show()
