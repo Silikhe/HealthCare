@@ -9,38 +9,14 @@ import retrofit2.http.POST
 interface OrderApi {
     @FormUrlEncoded
     //endpoint to hit
-    @POST("order/")
-    suspend fun createOrder(
-        @Field("item_name") item_name: String,
-        @Field("item_description") item_description: String,
-        @Field("item_quantity") item_quantity: String
-    ): OrderResponse
-
-//    @GET("order/id")
+//    @POST("order/")
 //    suspend fun createOrder(
 //        @Field("item_name") item_name: String,
 //        @Field("item_description") item_description: String,
 //        @Field("item_quantity") item_quantity: String
 //    ): OrderResponse
 
-//    @PUT("/order/id")
-//    suspend fun createOrder(
-//        @Field("item_name") item_name: String,
-//        @Field("item_description") item_description: String,
-//        @Field("item_quantity") item_quantity: String
-//    ): OrderResponse
-//
-//    @PATCH("/order/id")
-//    suspend fun createOrder(
-//        @Field("item_name") item_name: String,
-//        @Field("item_description") item_description: String,
-//        @Field("item_quantity") item_quantity: String
-//    ): OrderResponse
+    @GET("order/")
+    suspend fun getOrders() :OrderResponse
 
-    //    @DELETE("/order/id")
-//    suspend fun createOrder(
-//        @Field("item_name") item_name: String,
-//        @Field("item_description") item_description: String,
-//        @Field("item_quantity") item_quantity: String
-//    ): OrderResponse
 }

@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/splash_image"
-        android:layout_width="250dp"
-        android:layout_height="300dp"
+        android:layout_width="245dp"
+        android:layout_height="220dp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="-31dp"
         android:src="@drawable/logo" />

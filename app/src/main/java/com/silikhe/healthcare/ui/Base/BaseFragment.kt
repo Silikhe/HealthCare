@@ -26,6 +26,7 @@ abstract class BaseFragment<VM : ViewModel, B : ViewBinding, R : BaseRepos> : Fr
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
        //Initialize userprefernces
         userPreferences = UserPreferences(requireContext())
 

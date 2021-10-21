@@ -1,5 +1,7 @@
 package com.silikhe.healthcare.ui.Auth
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.view.LayoutInflater
@@ -9,6 +11,7 @@ import androidx.lifecycle.Observer
 import com.silikhe.healthcare.Data.Network.AuthApi
 import com.silikhe.healthcare.Data.Network.Resource
 import com.silikhe.healthcare.Data.Repository.AuthRepos
+import com.silikhe.healthcare.R
 import com.silikhe.healthcare.databinding.LoginFragmentBinding
 import com.silikhe.healthcare.ui.Base.BaseFragment
 import com.silikhe.healthcare.ui.Hospital.HomeActivity
@@ -26,16 +29,26 @@ class LoginFragment : BaseFragment<AuthViewModel, LoginFragmentBinding, AuthRepo
         viewModel.loginResponse.observe(viewLifecycleOwner, Observer {
             when (it) {
                 is Resource.Success -> {
-                        Toast.makeText(context, "" + it.value.access, Toast.LENGTH_SHORT).show()
-//                    viewModel.saveAuthToken(it.value.access)
+
+//                    val sharedPref =
+//                        activity?.getSharedPreferences("shared_pref", Context.MODE_PRIVATE) ?: return@Observer
+//                    with(sharedPref.edit()) {
+//                        putString("auth_key", it.value.access)
+//                        apply()
+//                    }
+
+
+
+//                    Toast.makeText(context, "" + it.value.access, Toast.LENGTH_SHORT).show()
+                    viewModel.saveAuthToken(it.value.access)
 
                     requireActivity().startNewActivity(HomeActivity::class.java)
 
-                    PreferenceManager.getDefaultSharedPreferences(activity).edit()
-                        .putString("Auth_token", it.value.access).apply()
-                    val mimi = PreferenceManager.getDefaultSharedPreferences(activity)
-                        .getString("Auth_token", it.value.access)
-                    Toast.makeText(context, "" + mimi, Toast.LENGTH_SHORT).show()
+//                    PreferenceManager.getDefaultSharedPreferences(activity).edit()
+//                        .putString("Auth_token", it.value.access).apply()
+//                    val mimi = PreferenceManager.getDefaultSharedPreferences(activity)
+//                        .getString("Auth_token", it.value.access)
+//                    Toast.makeText(context, "" + mimi, Toast.LENGTH_SHORT).show()
                 }
                 is Resource.Failure -> {
                     if (it.isNetworkError)
@@ -99,5 +112,6 @@ class LoginFragment : BaseFragment<AuthViewModel, LoginFragmentBinding, AuthRepo
         container: ViewGroup?
     ) = LoginFragmentBinding.inflate(inflater, container, false)
 
-    override fun getFragmentRepository() = AuthRepos(remoteDataSource.buidApi(AuthApi::class.java), userPreferences)
+    override fun getFragmentRepository() =
+        AuthRepos(remoteDataSource.buidApi(AuthApi::class.java), userPreferences)
 }

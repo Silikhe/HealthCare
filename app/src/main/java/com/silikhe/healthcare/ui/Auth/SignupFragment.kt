@@ -1,10 +1,11 @@
 package com.silikhe.healthcare.ui.Auth
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Switch
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.silikhe.healthcare.Data.Network.Resource
 import com.silikhe.healthcare.Data.Repository.AuthRepos
@@ -15,9 +16,21 @@ import androidx.lifecycle.Observer
 import com.silikhe.healthcare.Data.Network.AuthApi
 
 class SignupFragment :  BaseFragment<AuthViewModel, RegisterFragmentBinding, AuthRepos>() {
+    var type = ""
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
+
         super.onActivityCreated(savedInstanceState)
+
+        val switch_sw :Switch = binding.swSwitch;
+        binding.swSwitch.setOnClickListener {
+            if (switch_sw.isChecked){
+                type = "DONOR"
+            }
+            else{
+                type = "HOSPITAL"
+            }
+        }
 
         viewModel.signupResponse.observe(viewLifecycleOwner, Observer {
             when(it) {
@@ -39,9 +52,7 @@ class SignupFragment :  BaseFragment<AuthViewModel, RegisterFragmentBinding, Aut
             val username: String = binding.etEmail.text.toString().trim()
             val email: String = binding.etPass.text.toString().trim()
             val password: String = binding.etPassword.text.toString()
-            val TYPE = "DONOR"
 
-            // add validation
 
             if (username.isEmpty() || email.isBlank()) {
                 Toast.makeText(requireContext(), "Fields cannot be empty", Toast.LENGTH_SHORT).show()
@@ -51,7 +62,7 @@ class SignupFragment :  BaseFragment<AuthViewModel, RegisterFragmentBinding, Aut
             if (password.length < 6)
                 Toast.makeText(requireContext(), "password length must be > 6", Toast.LENGTH_SHORT).show()
             else
-                viewModel.signup(username, email, password, TYPE )
+                viewModel.signup(username, email, password, type )
 
         }
 
