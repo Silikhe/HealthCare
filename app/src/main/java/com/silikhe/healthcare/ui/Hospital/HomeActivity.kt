@@ -15,15 +15,52 @@ import com.google.android.material.navigation.NavigationView
 import java.security.AccessController.getContext
 import androidx.core.view.GravityCompat
 import android.widget.Toolbar
+import android.content.Intent
+import androidx.annotation.NonNull
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.silikhe.healthcare.R
+import android.app.PendingIntent.getActivity
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    private val mOnNavigationItemSelectedListener =
+        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    getSupportFragmentManager().beginTransaction().add(R.id.donRl, HomeFragment()).commit()
+//                    val intent = Intent(this, HomeFragment::class.java)
+//                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+//                    startActivity(intent)
+//                    Toast.makeText(this, "Available Blogs !", Toast.LENGTH_LONG).show();
+
+                }
+                R.id.donations -> {
+                    getSupportFragmentManager().beginTransaction().add(R.id.donRl, HomeFragment()).commit()
+
+//                    val intent = Intent(this, OrdersFragment::class.java)
+//                    startActivity(intent)
+//                    Toast.makeText(this, "Available Blogs !", Toast.LENGTH_LONG).show();
+
+                }
+                R.id.orders -> {
+//                    val intent = Intent(this, DisperchFragment::class.java)
+//                    startActivity(intent)
+                    Toast.makeText(this, "Available Blogs !", Toast.LENGTH_LONG).show();
+                }
+
+            }
+            false
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        val navigation = findViewById<View>(R.id.bottomNavigationView) as BottomNavigationView
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         val fab: View = findViewById(R.id.hosDialog)
         fab.setOnClickListener { view ->
@@ -54,7 +91,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
 
             override fun onDrawerStateChanged(newState: Int) {
-                //Log.i(TAG, "onDrawerStateChanged");
+                Log.i(TAG, "onDrawerStateChanged");
             }
         })
 

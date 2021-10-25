@@ -45,6 +45,5 @@ abstract class BaseFragment<VM : ViewModel, B : ViewBinding, R : BaseRepos> : Fr
 
     abstract fun getFragmentRepository(): R
 
-//    abstract fun apdateUi(value: OrderResponse)
 
 }

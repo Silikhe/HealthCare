@@ -1,8 +1,10 @@
 package com.silikhe.healthcare.Data.Network
 
+import com.silikhe.healthcare.Data.Response.OrderResponse
 import com.silikhe.healthcare.Data.Response.SignupResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface AuthApi {
@@ -27,4 +29,13 @@ interface AuthApi {
         @Field("password") password: String,
         @Field("type") type: String,
         ): SignupResponse
+
+    @FormUrlEncoded
+    //endpoint to hit
+    @GET("orders/")
+    suspend fun signup(
+        @Field("item_name") item_name: String,
+        @Field("item_quantity") item_quantity: String,
+        @Field("item_description") item_description : String,
+    ): OrderResponse
 }
