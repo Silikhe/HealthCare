@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/splash_image"
-        android:layout_width="250dp"
-        android:layout_height="300dp"
+        android:layout_width="245dp"
+        android:layout_height="220dp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="-31dp"
         android:src="@drawable/logo" />
@@ -28,7 +28,7 @@
         android:id="@+id/et_email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_above="@id/et_password"
+        android:layout_above="@id/et_pass"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/et_custom"
@@ -38,7 +38,7 @@
         android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/et_password"
+        android:id="@+id/et_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -109,13 +109,25 @@
         android:id="@+id/forgetPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_password"
-        android:layout_alignEnd="@+id/et_password"
+        android:layout_below="@+id/et_pass"
+        android:layout_alignEnd="@+id/et_pass"
         android:layout_marginTop="17dp"
         android:textColor="@color/primary"
-        android:textSize="20sp"
+        android:textSize="17sp"
         android:layout_marginEnd="0dp"
         android:text="Forget password?" />
 
-
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="20dp"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/progress_back"
+        tools:layout_editor_absoluteX="113dp" />
 </RelativeLayout>

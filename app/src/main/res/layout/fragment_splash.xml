@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <!--  <com.airbnb.lottie.LottieAnimationView-->
+    <!--      android:id="@+id/bt_down"-->
+    <!--      android:layout_width="match_parent"-->
+    <!--      android:layout_height="350dp"-->
+    <!--      android:layout_centerHorizontal="true"-->
+    <!--      android:layout_marginBottom="41dp"-->
+    <!--      android:scaleType="centerCrop"-->
+    <!--      app:layout_constraintEnd_toEndOf="parent"-->
+    <!--      app:layout_constraintStart_toStartOf="parent"-->
+    <!--      app:layout_constraintTop_toTopOf="parent"-->
+    <!--      app:lottie_autoPlay="true"-->
+    <!--      app:lottie_fileName="heart.json"-->
+    <!--      app:lottie_loop="false"-->
+    <!--      tools:ignore="MissingConstraints" />-->
+
+
+    <ImageView
+        android:id="@+id/splash_image"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="100dp"
+        android:alpha=".8"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha=".8"
+        android:text="MEDICAL SUPPLY"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/splash_image" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

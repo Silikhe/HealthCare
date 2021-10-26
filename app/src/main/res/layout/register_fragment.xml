@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/imgSign"
         android:layout_width="250dp"
-        android:layout_height="300dp"
+        android:layout_height="226dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:src="@drawable/logo"
@@ -36,13 +36,29 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/et_custom"
-        android:hint="something@some.com"
-        android:inputType="textEmailAddress"
+        android:hint="Silikhe"
+        android:inputType="text"
         android:padding="15dp"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/et_pass"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/et_custom"
+        android:hint="someone@gmail.com"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/et_email"
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
     <EditText
         android:id="@+id/et_password"
@@ -55,38 +71,47 @@
         android:inputType="textPassword"
         android:padding="15dp"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/et_email"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/et_email"
-        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+        app:layout_constraintEnd_toEndOf="@+id/et_pass"
+        app:layout_constraintStart_toStartOf="@+id/et_pass"
+        app:layout_constraintTop_toBottomOf="@+id/et_pass" />
 
-    <EditText
-        android:id="@+id/et_confirm_password"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/et_custom"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:padding="15dp"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/et_password"
-        app:layout_constraintStart_toStartOf="@+id/et_password"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/weightTextField"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:hint="Type"-->
+<!--        app:endIconDrawable="@drawable/ic_drop_down_24"-->
+<!--        app:endIconMode="custom"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/et_password"-->
+<!--        app:layout_constraintHorizontal_bias="0.057"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/et_password"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/et_password">-->
+
+<!--        <AutoCompleteTextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:inputType="none"-->
+<!--            android:paddingStart="16dp" />-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_sign"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/et_password"
-        android:layout_marginTop="20dp"
+        android:layout_below="@id/et_pass"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="7dp"
         android:background="@drawable/bg_btn"
         android:text="signup"
         android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="@+id/et_confirm_password"
-        app:layout_constraintStart_toStartOf="@+id/et_confirm_password"
-        app:layout_constraintTop_toBottomOf="@+id/et_confirm_password" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_toSignup"
+        app:layout_constraintEnd_toEndOf="@+id/et_password"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/et_password"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/swipeRight"
@@ -110,10 +135,26 @@
         android:layout_below="@+id/btn_sign"
         android:layout_marginTop="7dp"
         android:layout_toEndOf="@+id/swipeRight"
-        android:text="Login In"
+        android:text="Sign In"
         android:textColor="@color/primary"
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/swipeRight"
         app:layout_constraintTop_toBottomOf="@+id/btn_sign"
         tools:ignore="OnClick" />
+
+    <Switch
+        android:id="@+id/sw_switch"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Donor"
+        android:textColor="@color/primary"
+        android:textSize="17sp"
+        android:checked="true"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sign"
+        app:layout_constraintStart_toStartOf="@+id/et_password"
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,33 +1,41 @@
 package com.silikhe.healthcare
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import androidx.fragment.app.Fragment
-import com.silikhe.healthcare.AuthFragments.RegisterTabFragment
+import android.widget.Toast
+import com.silikhe.healthcare.Data.UserPreferences
+import com.silikhe.healthcare.ui.Auth.AuthActivity
+import com.silikhe.healthcare.ui.Hospital.HomeActivity
+import com.silikhe.healthcare.ui.startNewActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private val SPLASH_TIME_OUT: Long = 3000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Handler().postDelayed({
-            // This method will be executed once the timer is over
-            // Start your app main activity
-            val intent = Intent(this, SignupFragment::class.java)
-            overridePendingTransition(0, 0);
-            finish();
-            startActivity(intent);
-//            startActivity(Intent(this, SignupFragment::class.java))
+        val activity =  HomeActivity::class.java
 
-            // close this activity
-//            finish()
-        }, SPLASH_TIME_OUT)
 
+        val userPreferences = UserPreferences(this)
+        val sharedPreferences: SharedPreferences =
+            applicationContext.getSharedPreferences("shared_pref", Context.MODE_PRIVATE)
+        val savedString: String? = sharedPreferences.getString("auth_key", null)
+
+//        userPreferences.authToken.asLiveData().observe(this, Observer {
+         if(savedString == null) AuthActivity::class.java else HomeActivity::class.java
+        startNewActivity(activity)
+        Toast.makeText(this, "dk$savedString", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this, it ?: "Token is null", Toast.LENGTH_SHORT).show()
+//        })
+
+        finish()
+
+        startActivity(Intent(this, AuthActivity::class.java))
     }
 
 }

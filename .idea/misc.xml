@@ -3,23 +3,52 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.10520833333333333" />
+        <entry key="app/src/main/res/drawable/add.xml" value="0.11979166666666667" />
         <entry key="app/src/main/res/drawable/bg_btn.xml" value="0.209375" />
+        <entry key="app/src/main/res/drawable/bookings.xml" value="0.209375" />
+        <entry key="app/src/main/res/drawable/check.xml" value="0.10520833333333333" />
+        <entry key="app/src/main/res/drawable/donations.xml" value="0.209375" />
+        <entry key="app/src/main/res/drawable/et_custom.xml" value="0.11979166666666667" />
+        <entry key="app/src/main/res/drawable/history.xml" value="0.11979166666666667" />
+        <entry key="app/src/main/res/drawable/home.xml" value="0.12291666666666666" />
+        <entry key="app/src/main/res/drawable/ic_drop_down_24.xml" value="0.11979166666666667" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.10520833333333333" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.10520833333333333" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foregroundx.xml" value="0.11979166666666667" />
+        <entry key="app/src/main/res/drawable/logout.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/menu.xml" value="0.10520833333333333" />
+        <entry key="app/src/main/res/drawable/progress_back.xml" value="0.10520833333333333" />
+        <entry key="app/src/main/res/drawable/round_top_background.xml" value="0.209375" />
+        <entry key="app/src/main/res/drawable/standalone_chip.xml" value="0.10520833333333333" />
         <entry key="app/src/main/res/drawable/vie_bg.xml" value="0.209375" />
+        <entry key="app/src/main/res/layout/activity_auth.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_home_items.xml" value="0.3170731707317073" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_onbord.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/av_drawer.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_disparch.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_disperch.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2692828146143437" />
         <entry key="app/src/main/res/layout/fragment_new_order.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_orders.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/hospital_dialog.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/login_fragment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/login_tab_fragment.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/nav_drawer.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/nav_header.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/register_fragment.xml" value="0.21311475409836064" />
         <entry key="app/src/main/res/layout/register_tab_fragment.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/nav_drawer_menu.xml" value="0.5" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.10520833333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.10520833333333333" />
       </map>
     </option>
   </component>
