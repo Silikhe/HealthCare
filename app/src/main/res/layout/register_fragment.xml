@@ -111,7 +111,6 @@
         app:layout_constraintEnd_toEndOf="@+id/et_password"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/et_password"
-        app:layout_constraintTop_toBottomOf="@+id/switch1"
         tools:ignore="MissingConstraints" />
 
     <TextView

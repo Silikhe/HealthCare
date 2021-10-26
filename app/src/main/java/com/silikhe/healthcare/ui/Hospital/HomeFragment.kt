@@ -22,67 +22,61 @@ import com.silikhe.healthcare.databinding.FragmentHomeBinding
 import com.silikhe.healthcare.ui.Base.BaseFragment
 import com.silikhe.healthcare.ui.visible
 
-class HomeFragment :   Fragment(){
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
-    }
-//    BaseFragment<HomeViewModel, FragmentHomeBinding, OrderRepos>() {
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-
-
-//        binding.pbLoading.visible(true)
+class HomeFragment :
+//    Fragment(){
 //
-//        viewModel.getOrder()
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_home, container, false)
+//    }
+    BaseFragment<HomeViewModel, FragmentHomeBinding, OrderRepos>() {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-//        viewModel.order.observe(viewLifecycleOwner, Observer {
-//            when (it) {
-//                is Resource.Success -> {
+
+        binding.pbLoading.visible(true)
+
+        viewModel.getOrder()
+
+        viewModel.order.observe(viewLifecycleOwner, Observer {
+            when (it) {
+                is Resource.Success -> {
+                    binding.pbLoading.visible(false)
+
+//                    updateUi(it.value)
+                }
+//                is Resource.Failure -> {
 //                    binding.pbLoading.visible(false)
-//
-////                    updateUi(it.value)
+//                    Toast.makeText(context, "Fail", Toast.LENGTH_SHORT).show()
 //                }
-//            }
-//        })
+            }
+        })
     }
 
-//    override fun getViewModel(): Class<HomeViewModel> = HomeViewModel::class.java
-//    override fun getFragmentBinding(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?
-//    ) = FragmentHomeBinding.inflate(inflater, container, false)
+    override fun getViewModel(): Class<HomeViewModel> = HomeViewModel::class.java
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ) = FragmentHomeBinding.inflate(inflater, container, false)
 
 
-//    override fun getFragmentRepository(): OrderRepos {
-//        val sharedPref =
-//            applicationContext?.getSharedPreferences("shared_pref", Context.MODE_PRIVATE)
-//        val token = sharedPref?.getString("auth_key", null)
-//
-////        val sharedPreferences: SharedPreferences? =
-////            applicationContext?.getSharedPreferences("shared_pref", Context.MODE_PRIVATE)
-////        val token: String? = sharedPreferences?.getString("auth_key", null)
-//        val api = remoteDataSource.buidApi(OrderApi::class.java, token)
-//        return OrderRepos(api)
-//    }
+    override fun getFragmentRepository(): OrderRepos {
+        val token = "QMUzlOLk69F9wDdXeC5hYUBsMZElbfEMjcHUfOfSt6aHNpxQqoh5Iut0seYdePPR"
 
 
-//    override fun getFragmentRepository(): OrderRepos {
-//        val mimi = PreferenceManager.getDefaultSharedPreferences(activity)
-//            .getString("Auth_token", null)
-//        val api = remoteDataSource.buidApi(OrderApi::class.java, mimi)
-//        return OrderRepos(api)
-//    }
+        val api = remoteDataSource.buidApi(OrderApi::class.java, token)
+        return OrderRepos(api)
+    }
 
-//    fun updateUi(order: OrderResponse) {
+
+    fun updateUi(order: OrderResponse) {
 //        with(binding) {
-//            textViewId.text = order.date_created
-//            Toast.makeText(context, order.date_created, Toast.LENGTH_SHORT).show()
+//            textViewId.text = order.item_name
+            Toast.makeText(context, order.date_created, Toast.LENGTH_SHORT).show()
 //        }
-//    }
+    }
 
-//}
+}
